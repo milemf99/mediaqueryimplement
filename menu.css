@@ -1,0 +1,119 @@
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans',Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+.menu{
+    background-color: pink;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    box-shadow: 5px 0 10px black;
+}
+
+.logo{
+    color:burlywood;
+    font-size: 35px;
+    padding: 0 80px;
+    font-weight: bold ;
+}
+
+.menu_items{
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+.menu_items li{
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.menu_items li a{
+    padding: 7px 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-transform: uppercase;
+    color: cornsilk;
+}
+
+.menu_items li:hover,li.active{
+    background-color: rgb(121, 216, 233);
+    transition: .4s;
+}
+
+.btn_menu{
+    margin-right: 30px;
+    font-size: 25px;
+    color: darksalmon;
+    cursor: pointer;
+    display: none;
+}
+
+ul.show{
+    top:65px;
+}
+
+@media screen and (max-width : 950px) {
+    .menu{
+       
+        height: 65px;
+    }
+
+    .btn_menu{
+        display: inline-flex;
+    }
+
+    .menu_items{
+        position: fixed;
+        width: 100vw;
+        height: calc(100% - 65px);
+        background: #414141;
+        top: -100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+    }
+
+    .menu_items li{
+        margin: 30px 0 0 0;
+        line-height: 30px;
+    }
+    .menu_items li:hover{
+        background: none;
+    }
+    .menu_items li a{
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+    .menu_items li a:hover{
+        color: tomato;
+    }
+    .logo{
+        font-size: 30px;
+        padding-left: 35px;
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+    .menu_items li{
+        margin: 5px 0 0 0;
+    }
+    .menu_items{
+        overflow: scroll;
+        height: calc(100% - 65px);
+    }
+}
+
+
